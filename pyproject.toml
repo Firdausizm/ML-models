@@ -1,0 +1,33 @@
+[project]
+name = "ml-models"
+version = "0.1.0"
+description = "ini adalah implementasi project kecil Machine Learning"
+authors = [{name = "Alifsanda", email = "alifsandafirdausi@gmail.com"}]
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.2.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "tomli>=2.0.1; python_version < '3.11'"
+]
+
+# Pengaturan Folder & File
+[paths]
+raw_data = "data.csv"
+processed_data = "df_clean.csv"
+# output_models = "saved_model.pkl"        sekk sebentar
+
+# Tahap Preprocessing
+[preprocessing]
+missing_value_strategy = "mean" # opsi: mean, median, drop
+scaling = true
+# test_size = 0.2 #                          betarr
+random_state = 0
+
+# Parameter Algoritma
+[model_params]
+algorithm = "K-Means"
+n_clusters = 5
+init = "k-means++"
+max_iter = 300
